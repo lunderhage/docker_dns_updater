@@ -1,0 +1,16 @@
+Afraid FreeDNS updater
+
+This image creates a container that maintains a dynamic dns record on freedns.afraid.org.
+
+How to build:
+
+docker build . -t dns_updater
+
+How to start:
+
+You need to fetch the alpha numeric key from the Afraid website for the domain you want to update.
+
+docker run --restart=always --name dns_updater -e KEY=<ALPHA NUMERIC KEY> -d dns_updater
+
+The container will then automatically be started on boot.
+
